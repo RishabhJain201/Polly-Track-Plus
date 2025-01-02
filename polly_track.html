@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #87CEEB;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .navbar a:hover {
+            background-color: #555;
+            color: white;
+        }
+        .tab {
+            display: none;
+            padding: 20px;
+        }
+        .tab.active {
+            display: block;
+        }
+        .game-container {
+            text-align: center;
+        }
+        .game-frame {
+            border: 2px solid #000;
+            display: inline-block;
+            margin: 20px auto;
+        }
+        #flappy-bird-title {
+            margin-top: 20px;
+        }
+        .blank-message {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const activeTab = document.getElementById(tabName);
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+
+            const links = document.querySelectorAll('.navbar a');
+            links.forEach(link => link.classList.remove('active'));
+
+            const activeLink = document.querySelector(`[onclick="openTab('${tabName}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" onclick="openTab('polly-track')" class="active">Polly Track</a>
+        <a href="#" onclick="openTab('car-game')">Car Game</a>
+    </div>
+
+    <!-- Polly Track Game Tab -->
+    <div id="Polly Track" class="tab active">
+        <div class="game-container">
+            <h1 id="flappy-bird-title">Polly-Track</h1>
+            <iframe src="https://www.kodub.com/apps/polytrack" width="1400" height="720" class="game-frame"></iframe>
+        </div>
+    </div>
+
+    <!-- Car Game Tab -->
+    <div id="car-game" class="tab">
+        <div class="blank-message">Car Game will be implemented here.</div>
+    </div>
+</body>
+</html>
